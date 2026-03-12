@@ -30,10 +30,11 @@ st.markdown("""
         font-weight: bold;
     }
     .stMetric {
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.05);
         padding: 15px;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border: 1px solid rgba(0,0,0,0.1);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -148,7 +149,7 @@ else:
 
             with res_col2:
                 st.markdown("### 📈 Risk Score")
-                st.progress(probability)
+                st.progress(1 - probability)
                 if probability > 0.8:
                     st.write("Risk Status: **Very Low**")
                 elif probability > 0.6:
